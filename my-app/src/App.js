@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { TypeAnimation } from 'react-type-animation';
 import { easings, useSpring, animated } from '@react-spring/web'
@@ -8,16 +8,37 @@ import './App.css';
 const CURSOR_CLASS_NAME = 'custom-type-animation-cursor';
 
 function App () {
+  const [sheSaidYes, setSheSaidYes] = useState(false);
+
   const [typeStyles, typeApi] = useSpring(() => ({
     opacity: "100%",
   }))
-  const [buttonStyles, buttonsApi] = useSpring(() => ({
+  const [buttonsStyles, buttonsApi] = useSpring(() => ({
     y: -1000,
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,
     }
   }))
+  const [noButtonStyles, noButtonApi] = useSpring(
+    () => ({
+      x: 0,
+      rotateZ: 0
+    })
+  )
+
+  const handleYesButtonClick = () => {
+    setSheSaidYes(true);
+  }
+
+  const handleNoButtonClick = () => {
+    noButtonApi.start({
+      to: [
+        { x: 500, rotateZ: 360 },
+        { x: 0, rotateZ: 0 },
+      ],
+    })
+  }
 
   const handleTypeComplete = (() => {
     typeApi.start({
@@ -34,25 +55,31 @@ function App () {
 
   return (
     <div className="App">
+      {sheSaidYes && (
+        <>
+          <div className="Layer">
+            <img src="/us.jpeg" alt="image" />
+          </div>
+          <div className="Layer">
+            <h1>Happy Valentines Day!</h1>
+          </div>
+        </>
+      )}
       <div className="Layer">
-        <animated.div style={{ alignSelf: 'center', ...typeStyles }}>
+        <animated.div style={{ margin: '0 20em', alignSelf: 'center', ...typeStyles }}>
           <TypeAnimation
             sequence={[
               'Hey Amaya!',
               1000,
-              'Will you be my Driver?',
+              'Will you be my driver?',
               500,
-              'Will you be my Sous Chef?',
+              'Will you be my sous chef?',
               500,
-              'Will you be my Friend?',
-              500,
-              'Will you be my Roommate?',
-              500,
-              'Will you be my Partner?',
-              1000,
-              'Will you be my Valentine?',
+              'Will you be my long term, long distance, low commitment, casual girlfriend?',
+              1500,
+              'Will you be my valentine?',
               (el) => el.classList.remove(CURSOR_CLASS_NAME),
-              500,
+              1000,
               handleTypeComplete
             ]}
             wrapper="span"
@@ -63,12 +90,14 @@ function App () {
           />
         </animated.div>
       </div>
-      <div className="Layer">
-        <animated.div style={{ display: "flex", gap: "3em", margin: 'auto', ...buttonStyles }}>
-          <a className="button">Yes</a>
-          <a className="button">No</a>
-        </animated.div>
-      </div>
+      {!sheSaidYes && (
+        <div className="Layer">
+          <animated.div style={{ display: "flex", gap: "3em", margin: 'auto', ...buttonsStyles }}>
+            <a onClick={handleYesButtonClick} className="button">Yes</a>
+            <animated.a onClick={handleNoButtonClick} style={{ ...noButtonStyles }} className="button">No</animated.a>
+          </animated.div>
+        </div>
+      )}
     </div >
   );
 }

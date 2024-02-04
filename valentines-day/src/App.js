@@ -72,7 +72,7 @@ function App () {
         </animated.div>
       </div>
       <div className="Layer">
-        <animated.div style={{ margin: '0 20em', alignSelf: 'center', ...typeSpring }}>
+        <animated.div style={{ margin: '0 15vw', alignSelf: 'center', ...typeSpring }}>
           <TypeAnimation
             sequence={[
               'Hey Amaya!',

@@ -52,11 +52,15 @@ img {
   width: 100vw;
   object-fit: cover;
   filter: brightness(70%);
+  position: absolute;
 }
 
 h1 {
-  margin: 20vh auto;
-  align-self: flex-end;
   font-size: 10em;
   color: #EDAFB8;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+  bottom: 0;
+  margin-bottom: 20vh;
 }

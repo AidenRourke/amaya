@@ -8,27 +8,37 @@ import './App.css';
 const CURSOR_CLASS_NAME = 'custom-type-animation-cursor';
 
 function App () {
-  const [sheSaidYes, setSheSaidYes] = useState(false);
-
-  const [typeStyles, typeApi] = useSpring(() => ({
+  const [typeSpring, typeApi] = useSpring(() => ({
     opacity: "100%",
   }))
-  const [buttonsStyles, buttonsApi] = useSpring(() => ({
+  const [buttonsSpring, buttonsApi] = useSpring(() => ({
     marginTop: -1500,
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,
     }
   }))
-  const [noButtonStyles, noButtonApi] = useSpring(
+  const [noButtonSpring, noButtonApi] = useSpring(
     () => ({
       x: 0,
       rotateZ: 0
     })
   )
+  const [imageSpring, imageApi] = useSpring(() => ({
+    opacity: "0%"
+  }))
 
   const handleYesButtonClick = () => {
-    setSheSaidYes(true);
+    buttonsApi.start({
+      to: [
+        { marginTop: -1500 }
+      ]
+    })
+    imageApi.start({
+      to: [
+        { opacity: "100%" }
+      ]
+    })
   }
 
   const handleNoButtonClick = () => {
@@ -55,18 +65,14 @@ function App () {
 
   return (
     <div className="App">
-      {sheSaidYes && (
-        <>
-          <div className="Layer">
-            <img src={process.env.PUBLIC_URL + "/us.jpeg"} alt="image" />
-          </div>
-          <div className="Layer">
-            <h1>Happy Valentines Day!</h1>
-          </div>
-        </>
-      )}
       <div className="Layer">
-        <animated.div style={{ margin: '0 20em', alignSelf: 'center', ...typeStyles }}>
+        <animated.div style={{ ...imageSpring }}>
+          <img src={process.env.PUBLIC_URL + "/us.jpeg"} alt="image" />
+          <h1>Happy Valentines Day!</h1>
+        </animated.div>
+      </div>
+      <div className="Layer">
+        <animated.div style={{ margin: '0 20em', alignSelf: 'center', ...typeSpring }}>
           <TypeAnimation
             sequence={[
               'Hey Amaya!',
@@ -84,14 +90,12 @@ function App () {
           />
         </animated.div>
       </div>
-      {!sheSaidYes && (
-        <div className="Layer">
-          <animated.div style={{ display: "flex", gap: "3em", height: "100vh", alignItems: "center", margin: 'auto', ...buttonsStyles }}>
-            <a onClick={handleYesButtonClick} className="button">Yes</a>
-            <animated.a onClick={handleNoButtonClick} style={{ ...noButtonStyles }} className="button">No</animated.a>
-          </animated.div>
-        </div>
-      )}
+      <div className="Layer">
+        <animated.div style={{ display: "flex", gap: "3em", height: "100vh", alignItems: "center", margin: 'auto', ...buttonsSpring }}>
+          <a onClick={handleYesButtonClick} className="button">Yes</a>
+          <animated.a onClick={handleNoButtonClick} style={{ ...noButtonSpring }} className="button">No</animated.a>
+        </animated.div>
+      </div>
     </div >
   );
 }

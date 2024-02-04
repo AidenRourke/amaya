@@ -4,6 +4,7 @@
   width: 100vw;
   overflow: hidden;
   color: #333333;
+  font-family: 'Valentines Day', sans-serif;
 }
 
 .Layer {
@@ -12,6 +13,7 @@
   width: 100vw;
   display: flex;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .custom-type-animation-cursor::after {
@@ -33,7 +35,7 @@ a.button {
   box-sizing: border-box;
   text-decoration: none;
   font-weight: bold;
-  font-size: 4em;
+  font-size: 5em;
   color: #FFFFFF;
   text-align: center;
   transition: all 0.2s;
@@ -53,9 +55,8 @@ img {
 }
 
 h1 {
-  margin: 1em auto;
+  margin: 20vh auto;
   align-self: flex-end;
-  font-family: 'Valentine Day Personal Use', sans-serif;
-  font-size: 8em;
+  font-size: 10em;
   color: #EDAFB8;
 }

@@ -78,7 +78,7 @@ function App () {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: '4em', fontWeight: 'bold' }}
+            style={{ fontSize: '5em', fontWeight: 'bold' }}
             className={CURSOR_CLASS_NAME}
             cursor={false}
           />

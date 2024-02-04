@@ -15,6 +15,7 @@ function App () {
   }))
   const [buttonsStyles, buttonsApi] = useSpring(() => ({
     y: -1000,
+    opacity: "0%",
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,
@@ -48,7 +49,7 @@ function App () {
     })
     buttonsApi.start({
       to: [
-        { y: 0 },
+        { y: 0, opacity: "100%" },
       ]
     })
   })

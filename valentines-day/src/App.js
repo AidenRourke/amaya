@@ -14,8 +14,7 @@ function App () {
     opacity: "100%",
   }))
   const [buttonsStyles, buttonsApi] = useSpring(() => ({
-    y: -1000,
-    opacity: "0%",
+    marginTop: -1000,
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,
@@ -49,7 +48,7 @@ function App () {
     })
     buttonsApi.start({
       to: [
-        { y: 0, opacity: "100%" },
+        { marginTop: 0 }
       ]
     })
   })
@@ -87,7 +86,7 @@ function App () {
       </div>
       {!sheSaidYes && (
         <div className="Layer">
-          <animated.div style={{ display: "flex", gap: "3em", margin: 'auto', ...buttonsStyles }}>
+          <animated.div style={{ display: "flex", gap: "3em", height: "100vh", alignItems: "center", margin: 'auto', ...buttonsStyles }}>
             <a onClick={handleYesButtonClick} className="button">Yes</a>
             <animated.a onClick={handleNoButtonClick} style={{ ...noButtonStyles }} className="button">No</animated.a>
           </animated.div>

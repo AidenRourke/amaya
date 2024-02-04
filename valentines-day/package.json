@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "valentines-day",
+  "homepage": "https://aidenrourke.github.io/amaya/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

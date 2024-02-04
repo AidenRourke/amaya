@@ -71,12 +71,6 @@ function App () {
             sequence={[
               'Hey Amaya!',
               1000,
-              'Will you be my driver?',
-              500,
-              'Will you be my sous chef?',
-              500,
-              'Will you be my long term, long distance, low commitment, casual girlfriend?',
-              1500,
               'Will you be my valentine?',
               (el) => el.classList.remove(CURSOR_CLASS_NAME),
               1000,

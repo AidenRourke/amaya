@@ -58,7 +58,7 @@ function App () {
       {sheSaidYes && (
         <>
           <div className="Layer">
-            <img src="/us.jpeg" alt="image" />
+            <img src={process.env.PUBLIC_URL + "/us.jpeg"} alt="image" />
           </div>
           <div className="Layer">
             <h1>Happy Valentines Day!</h1>

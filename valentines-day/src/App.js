@@ -14,7 +14,7 @@ function App () {
     opacity: "100%",
   }))
   const [buttonsStyles, buttonsApi] = useSpring(() => ({
-    marginTop: -1000,
+    marginTop: -1500,
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,

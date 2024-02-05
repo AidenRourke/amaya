@@ -29,6 +29,11 @@ const App = () => {
   }))
 
   const handleYesButtonClick = () => {
+    buttonsApi.start({
+      to: [
+        { y: -1500 }
+      ]
+    })
     imageApi.start({
       to: [
         { opacity: "100%" }

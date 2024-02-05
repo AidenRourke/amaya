@@ -47,14 +47,6 @@ a.button:hover {
   background-color: #FFFFFF;
 }
 
-img {
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-  filter: brightness(50%);
-  position: absolute;
-}
-
 p {
   font-size: 10em;
   color: #EDAFB8;
@@ -63,4 +55,24 @@ p {
   text-align: center;
   bottom: 0;
   margin-bottom: 20vh;
+}
+
+.image {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-position-y: center;
+}
+
+.image:after {
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #000 100%);
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
 }

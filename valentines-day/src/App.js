@@ -67,7 +67,7 @@ const App = () => {
     <div className="App">
       <div className="Layer">
         <animated.div style={{ ...imageSpring }}>
-          <img src={process.env.PUBLIC_URL + "/us.jpeg"} alt="image" />
+          <div className="image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/us.jpeg)` }} />
           <p>Happy Valentines Day!</p>
         </animated.div>
       </div>

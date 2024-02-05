@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { TypeAnimation } from 'react-type-animation';
 import { easings, useSpring, animated } from '@react-spring/web'
@@ -84,7 +84,7 @@ function App () {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: '5em', fontWeight: 'bold' }}
+            style={{ fontSize: '5em' }}
             className={CURSOR_CLASS_NAME}
             cursor={false}
           />

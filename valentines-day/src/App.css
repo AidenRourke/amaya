@@ -63,6 +63,7 @@ p {
   width: 100vw;
   position: absolute;
   background-position-y: center;
+  background-position-x: center;
 }
 
 .image:after {

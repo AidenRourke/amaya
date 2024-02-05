@@ -68,7 +68,7 @@ function App () {
       <div className="Layer">
         <animated.div style={{ ...imageSpring }}>
           <img src={process.env.PUBLIC_URL + "/us.jpeg"} alt="image" />
-          <h1>Happy Valentines Day!</h1>
+          <p>Happy Valentines Day!</p>
         </animated.div>
       </div>
       <div className="Layer">
@@ -84,7 +84,7 @@ function App () {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: '5em' }}
+            style={{ fontSize: '10em' }}
             className={CURSOR_CLASS_NAME}
             cursor={false}
           />

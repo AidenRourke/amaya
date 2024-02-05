@@ -12,7 +12,7 @@ const App = () => {
     opacity: "100%",
   }))
   const [buttonsSpring, buttonsApi] = useSpring(() => ({
-    marginTop: -1500,
+    y: -1500,
     config: {
       duration: 1000,
       easing: easings.easeOutBounce,
@@ -31,7 +31,7 @@ const App = () => {
   const handleYesButtonClick = () => {
     buttonsApi.start({
       to: [
-        { marginTop: -1500 }
+        { y: -1500 }
       ]
     })
     imageApi.start({
@@ -58,7 +58,7 @@ const App = () => {
     })
     buttonsApi.start({
       to: [
-        { marginTop: 0 }
+        { y: 0 }
       ]
     })
   })

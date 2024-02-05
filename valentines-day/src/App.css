@@ -5,6 +5,7 @@
   overflow: hidden;
   color: #333333;
   font-family: 'Valentines Day', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .Layer {
@@ -51,7 +52,7 @@ img {
   height: 100vh;
   width: 100vw;
   object-fit: cover;
-  filter: brightness(70%);
+  filter: brightness(50%);
   position: absolute;
 }
 

@@ -7,7 +7,7 @@ import './App.css';
 
 const CURSOR_CLASS_NAME = 'custom-type-animation-cursor';
 
-function App () {
+const App = () => {
   const [typeSpring, typeApi] = useSpring(() => ({
     opacity: "100%",
   }))
@@ -84,7 +84,7 @@ function App () {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: '10em' }}
+            style={{ fontSize: '5em' }}
             className={CURSOR_CLASS_NAME}
             cursor={false}
           />
